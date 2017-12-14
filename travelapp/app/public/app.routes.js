@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    var app = angular.module("Myapp" + '.routes', []);
+    var app = angular.module("Myapp.routes", []);
 
     app.config(_configureStates);
 
@@ -11,13 +11,13 @@
             enabled: true,
             requireBase: false,
         });
-        $urlRouterProvider.otherwise('/home');
+        //$urlRouterProvider.otherwise('/home');
         $stateProvider
             .state({
                 name: 'next',
                 url: '/next',
                 templateUrl: '/app/public/home.html',
-                title: 'next',
+                title: 'next'
                 //controller: 'testController as testCtrl'
             });
     }

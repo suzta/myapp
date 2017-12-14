@@ -3,6 +3,6 @@
     window.APP = window.APP || {};
     APP.NAME = "Myapp";
     angular
-        .module(APP.NAME, ['ui.router', APP.NAME + '.routes']);
+        .module(APP.NAME, ['ui.router', APP.NAME + '.routes', 'ngRoute']);
 
 })();

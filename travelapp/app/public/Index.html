@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en" ng-app="Myapp">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +7,18 @@
     <title></title>
 
 </head>
-<body ng-app="Myapp">
+<body>
     <p>page1</p>
     <p>This is my first page.</p>
-    <a ui-sref="next" href="#">Click</a>
+    <p><a ui-sref="next" href="#">Click</a></p>
 
 
     <script src="../Scripts/jquery-3.2.1.js" type="text/javascript"></script>
-    <script src="../Scripts/angular.js"></script>
-    <script src="../Scripts/angular-ui-router.js" type="text/javascript"></script>
+    <script src="../../Scripts/angular.min.js"></script>
+    <!--<script src="../Scripts/angular-ui-router.js" type="text/javascript"></script>-->
     <script src="../Scripts/angular-ui-router.min.js"></script>
-    <script src="/app/public/route.js"></script>
+    <script src="../../Scripts/angular-route.min.js"></script>
     <script src="/app/app.public.js"></script>
+    <script src="/app/public/app.routes.js"></script>
 </body>
 </html>
