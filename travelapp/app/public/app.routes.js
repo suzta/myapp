@@ -14,11 +14,18 @@
         //$urlRouterProvider.otherwise('/home');
         $stateProvider
             .state({
-                name: 'next',
-                url: '/next',
+                name: 'home',
+                url: '/home',
                 templateUrl: '/app/public/home.html',
-                title: 'next'
+                title: 'home'
                 //controller: 'testController as testCtrl'
-            });
+            })
+         .state({
+            name: 'about',
+            url: '/about',
+            templateUrl: '/app/public/about.html',
+            title: 'about'
+            //controller: 'testController as testCtrl'
+        });
     }
     })();

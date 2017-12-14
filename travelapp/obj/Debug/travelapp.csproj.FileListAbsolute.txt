@@ -244,6 +244,7 @@ C:\repos\github\myapp\travelapp\bin\Microsoft.AI.DependencyCollector.xml
 C:\repos\github\myapp\travelapp\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\repos\github\myapp\travelapp\bin\Microsoft.AI.WindowsServer.xml
 C:\repos\github\myapp\travelapp\bin\Microsoft.AI.Web.xml
+C:\repos\github\myapp\travelapp\obj\Debug\travelapp.csprojResolveAssemblyReference.cache
 C:\repos\github\myapp\travelapp\obj\Debug\travelapp.csproj.CoreCompileInputs.cache
 C:\repos\github\myapp\travelapp\obj\Debug\travelapp.dll
 C:\repos\github\myapp\travelapp\obj\Debug\travelapp.pdb
