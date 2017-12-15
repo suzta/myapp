@@ -18,7 +18,6 @@ namespace travelapp.services.Data
 
             Action<SqlParameterCollection> returnParameters = null,
             Action<SqlCommand> cmdModifier = null);
-
         int ExecuteNonQuery(string storedProc,
             Action<System.Data.SqlClient.SqlParameterCollection> inputParamMapper,
             Action<System.Data.SqlClient.SqlParameterCollection> returnParameters = null);

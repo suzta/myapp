@@ -9,18 +9,29 @@ using travelapp.services;
 
 namespace travelapp.Controllers.Api
 {
-    [RoutePrefix("/api/register")]
+    [RoutePrefix("api/register")]
     public class RegisterController : ApiController
     {
-        [Route("/post"), HttpPost]
-        public HttpResponseMessage Post(People model)
+        //[HttpPost]
+        //[Route]
+        //public HttpResponseMessage Post(People model)
+        //{
+        //    model.ModifiedBy = "admin";
+        //    PeopleService svc = new PeopleService();
+        //    int id = svc.Insert(model);
+        //    ItemResponse<int> response = new ItemResponse<int>();
+        //    response.Item = id;
+        //    return Request.CreateResponse(HttpStatusCode.OK, response);
+        //}
+
+        [HttpGet]
+        [Route("get")]
+        public HttpResponseMessage Get()
         {
-            model.ModifiedBy = "admin";
             PeopleService svc = new PeopleService();
-            int id = svc.Insert(model);
-            ItemResponse<int> response = new ItemResponse<int>();
-            response.Item = id;
-            return Request.CreateResponse(HttpStatusCode.OK, response);
+            ItemsResponse<People> resp = new ItemsResponse<People>();
+            resp.Items = svc.GetAll();
+            return Request.CreateResponse(HttpStatusCode.OK, resp);
         }
     }
 }

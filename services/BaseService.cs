@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LPGallery.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace travelapp.services
         public BaseService()
         {
             string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-            //this.DataProvider = new SqlDataProvider(connStr);
+            this.DataProvider = new SqlDataProvider(connStr);
         }
     }
 }
