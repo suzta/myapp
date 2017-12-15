@@ -20,12 +20,17 @@
                 title: 'home'
                 //controller: 'testController as testCtrl'
             })
-         .state({
-            name: 'about',
-            url: '/about',
-            templateUrl: '/app/public/about.html',
-            title: 'about'
-            //controller: 'testController as testCtrl'
-        });
+                .state({
+                name: 'about',
+                url: '/about',
+                templateUrl: '/app/public/about.html',
+                title: 'about'
+            })
+            .state({
+                name: 'register',
+                url: '/register',
+                templateUrl: '/app/public/register/register.html',
+                title: 'register'
+            });
     }
     })();

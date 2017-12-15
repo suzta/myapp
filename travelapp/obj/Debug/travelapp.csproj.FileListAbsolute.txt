@@ -248,3 +248,7 @@ C:\repos\github\myapp\travelapp\obj\Debug\travelapp.csprojResolveAssemblyReferen
 C:\repos\github\myapp\travelapp\obj\Debug\travelapp.csproj.CoreCompileInputs.cache
 C:\repos\github\myapp\travelapp\obj\Debug\travelapp.dll
 C:\repos\github\myapp\travelapp\obj\Debug\travelapp.pdb
+C:\repos\github\myapp\travelapp\bin\travelapp.models.dll
+C:\repos\github\myapp\travelapp\bin\travelapp.services.dll
+C:\repos\github\myapp\travelapp\bin\travelapp.services.pdb
+C:\repos\github\myapp\travelapp\bin\travelapp.models.pdb

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace travelapp.models
 {
-    public class Class1
+    public class ItemResponse<T> : SuccessResponse
     {
+
+        public T Item { get; set; }
+
     }
 }
