@@ -1,0 +1,5 @@
+C:\repos\github\myapp\travelapp.models\bin\Debug\travelapp.models.dll
+C:\repos\github\myapp\travelapp.models\bin\Debug\travelapp.models.pdb
+C:\repos\github\myapp\travelapp.models\obj\Debug\travelapp.models.csproj.CoreCompileInputs.cache
+C:\repos\github\myapp\travelapp.models\obj\Debug\travelapp.models.dll
+C:\repos\github\myapp\travelapp.models\obj\Debug\travelapp.models.pdb
