@@ -27,6 +27,12 @@
                 title: 'about'
             })
             .state({
+                name: 'people',
+                url: '/people',
+                templateUrl: '/app/public/people/people.html',
+                title: 'people'
+            })
+            .state({
                 name: 'register',
                 url: '/register',
                 templateUrl: '/app/public/register/register.html',
