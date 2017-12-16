@@ -1,0 +1,53 @@
+﻿<div class="container">
+    <div class="row main">
+        <div class="panel-heading">
+            <div class="panel-title text-center">
+                <h1 class="title">People</h1>
+                <hr />
+            </div>
+        </div>
+        <div class="main-login main-center">
+            <form class="form-horizontal" method="post" action="#">
+                <div class="form-group">
+                    <label class="cols-sm-2 control-label">First Name</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" ng-model="peopleController.item.firstName" placeholder="Enter your frist Name" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="cols-sm-2 control-label">Middle Initial</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" ng-model="peopleController.item.middleInitial" placeholder="Enter your middle initial" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="cols-sm-2 control-label">Last Name</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" ng-model="peopleController.item.lastName" placeholder="Enter your last name" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="cols-sm-2 control-label">Date Of Birth</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <input type="date" class="form-control" ng-model="peopleController.item.dob" placeholder="Enter your dob" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <button type="button" class="btn btn-primary btn-lg btn-block login-button">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
