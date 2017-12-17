@@ -89,7 +89,6 @@ namespace travelapp.services
                     paramCol.AddWithValue("@MiddleInitial", model.MiddleInitial);
                     paramCol.AddWithValue("@LastName", model.LastName);
                     paramCol.AddWithValue("@DateOfBirth", model.DateOfBirth);
-                    //paramCol.AddWithValue("@ModifiedDate", model.ModifiedDate);
                     paramCol.AddWithValue("@ModifiedBy", model.ModifiedBy);
                 }
             );
