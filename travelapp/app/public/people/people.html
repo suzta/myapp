@@ -1,53 +1,80 @@
 ﻿<div class="container">
-    <div class="row main">
+    <div class="row main col-md-8 col-md-offset-2">
         <div class="panel-heading">
             <div class="panel-title text-center">
                 <h1 class="title">People</h1>
                 <hr />
             </div>
         </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg btn-block " ng-click="peopleCtrl.showAll()">List Of people</button>
+        </div>
+        <div class="space-30"></div>
         <div class="main-login main-center">
-            <form class="form-horizontal" method="post" action="#">
+            <form class="form-horizontal" name="people" method="post" action="#">
                 <div class="form-group">
-                    <label class="cols-sm-2 control-label">First Name</label>
-                    <div class="cols-sm-10">
+                    <label class="col-sm-4 control-label">First Name</label>
+                    <div class="col-sm-8">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" ng-model="peopleController.item.firstName" placeholder="Enter your frist Name" />
+                            <input type="text" class="form-control" name="firstName" ng-value="peopleCtrl.editItem.firstName" ng-model="peopleCtrl.item.firstName = peopleCtrl.editItem.firstName" placeholder="Enter your frist Name" required/>
+                        <div ng-show="people.firstName.$invalid && !people.firstName.$pristine">
+                            <p ng-messages="required" class="text-danger">First Name is required</p>
+                        </div>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="cols-sm-2 control-label">Middle Initial</label>
-                    <div class="cols-sm-10">
+                    <label class="col-sm-4 control-label">Middle Initial</label>
+                    <div class="col-sm-8">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" ng-model="peopleController.item.middleInitial" placeholder="Enter your middle initial" />
+                            <input type="text" class="form-control" name="middleInitial" ng-value="peopleCtrl.editItem.middleInitial" ng-model="peopleCtrl.item.middleInitial = peopleCtrl.editItem.middleInitial" placeholder="Enter your middle initial" />
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="cols-sm-2 control-label">Last Name</label>
-                    <div class="cols-sm-10">
+                    <label class="col-sm-4 control-label">Last Name</label>
+                    <div class="col-sm-8">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" ng-model="peopleController.item.lastName" placeholder="Enter your last name" />
+                            <input type="text" class="form-control" name="lastName" ng-value="peopleCtrl.editItem.lastName" ng-model="peopleCtrl.item.lastName = peopleCtrl.editItem.lastName" placeholder="Enter your last name" required/>
+                            <div ng-show="people.lastName.$invalid && !people.lastName.$pristine">
+                                <p ng-messages="required" class="text-danger">Last Name is required.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="cols-sm-2 control-label">Date Of Birth</label>
-                    <div class="cols-sm-10">
+                    <label class="col-sm-4 control-label">Date Of Birth</label>
+                    <div class="col-sm-8">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input type="date" class="form-control" ng-model="peopleController.item.dob" placeholder="Enter your dob" />
+                            <input type="date" class="form-control" name="dateOfBirth" ng-value="peopleCtrl.editItem.dateOfBirth" ng-model="peopleCtrl.item.dateOfBirth = peopleCtrl.editItem.dateOfBirth" placeholder="Enter your dateOfBirth" required/>
+                            <div ng-show="people.dateOfBirth.$invalid && !people.dateOfBirth.$pristine">
+                                <p ng-messages="required" class="text-danger">Birth Date is required.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="form-group ">
-                    <button type="button" class="btn btn-primary btn-lg btn-block login-button">Submit</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="peopleCtrl.postPerson()">Submit</button>
                 </div>
             </form>
+            <div class="space-60"></div>
+        </div>
+        <div class="space-60"></div>
+    </div>
+    <div class="list col-sm-6 col-md-4 col-md-offset-1" ng-repeat="item in peopleCtrl.allItems">
+        <div class="space-60"></div>
+        <div>
+            <p><strong>first Name: </strong>{{item.firstName}}</p>
+            <p><strong>Middle Initial: </strong>{{item.middleInitial}}</p>
+            <p><strong>Last Name: </strong>{{item.lastName}}</p>
+            <p><strong>Date Of Birth: </strong>{{item.dateOfBirth | date:date:"dd, MMMM, yyyy"}}</p>
+            <p><strong>Created Date: </strong>{{item.createdDate | date:date:"dd, MMMM, yyyy 'at' h:mma"}}</p>
+            <md-button class="btn btn-danger glyphicon glyphicon-trash" ng-click="peopleCtrl.remove(item.id)"></md-button>
+            <md-button class="btn btn-info glyphicon glyphicon-pencil" ng-click="peopleCtrl.editing(item)"></md-button>
         </div>
     </div>
 </div>

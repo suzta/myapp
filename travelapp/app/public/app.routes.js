@@ -30,7 +30,8 @@
                 name: 'people',
                 url: '/people',
                 templateUrl: '/app/public/people/people.html',
-                title: 'people'
+                title: 'people',
+                controller: 'peopleController as peopleCtrl'
             })
             .state({
                 name: 'register',
