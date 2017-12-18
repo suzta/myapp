@@ -16,6 +16,7 @@
 
         vm.item = {};
         vm.allItems = {};
+        vm.itemCopy = {};
 
         vm.showAll = _showAll;
         vm.showSuccess = _showSuccess;
@@ -25,7 +26,7 @@
         vm.removeSuccess = _removeSuccess;
         vm.removeError = _removeError;
 
-        //vm.change = _change;
+        vm.change = _change;
         vm.editing = _editing;
         vm.editSuccess = _editSuccess;
         vm.editError = _editError;
@@ -36,16 +37,9 @@
         }
 
         function _postPerson() {
-            if (!vm.activeEdit) {
                 console.log("post button was clicked");
                 vm.peopleService.posting(vm.item)
                     .then(vm.postSuccess).catch(vm.postError);
-            }
-            else {
-                console.log("editing button was clicked");
-                vm.peopleService.updating(vm.item)
-                    .then(vm.editSuccess).catch(vm.editError);
-            }
         }
         function _postSuccess(res) {
             console.log(res);
@@ -58,16 +52,16 @@
             console.log(err);
         }
 
-        function _editing(item) {
-            vm.editItem = item;
-            //vm.id = vm.editItem.id;
+        function _editing(editItem) {
+            vm.editItem = editItem;
+            vm.itemCopy = angular.copy(vm.editItem);
             vm.activeEdit = true;
         }
 
-        //function _change() {
-        //    vm.peopleService.updating(vm.item)
-        //        .then(vm.editSuccess).catch(vm.editError);
-        //}
+        function _change(id) {
+            vm.peopleService.updating(vm.itemCopy)
+                .then(vm.editSuccess).catch(vm.editError);
+        }
 
         function _editSuccess(res) {
             console.log(res);

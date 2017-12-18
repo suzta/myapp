@@ -1,7 +1,10 @@
 C:\repos\github\myapp\services\bin\Debug\travelapp.services.dll
 C:\repos\github\myapp\services\bin\Debug\travelapp.services.pdb
+C:\repos\github\myapp\services\bin\Debug\HtmlAgilityPack.dll
 C:\repos\github\myapp\services\bin\Debug\travelapp.models.dll
 C:\repos\github\myapp\services\bin\Debug\travelapp.models.pdb
+C:\repos\github\myapp\services\bin\Debug\HtmlAgilityPack.pdb
+C:\repos\github\myapp\services\bin\Debug\HtmlAgilityPack.xml
 C:\repos\github\myapp\services\obj\Debug\travelapp.services.csprojResolveAssemblyReference.cache
 C:\repos\github\myapp\services\obj\Debug\travelapp.services.csproj.CoreCompileInputs.cache
 C:\repos\github\myapp\services\obj\Debug\travelapp.services.dll

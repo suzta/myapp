@@ -1,0 +1,39 @@
+﻿<div class="breadcrumb-wrapper">
+    <div class="container">
+        <h1>Where To Stay!</h1>
+    </div>
+</div>
+<!--end breadcrumb-->
+<div class="space-60"></div>
+<div class="container">
+    <div class="row">
+        <table class="table table-responsive table-hover">
+            <thead>
+                <tr>
+                    <td class="color-info"><strong>Title</strong></td>
+                    <td class="color-info"><strong>Url</strong></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in webCtrl.allItems">
+                    <td><strong>{{item.title}}</strong></td>
+                    <td><a target="_blank" href="{{item.url}}">{{item.url}}</a></td>
+                    <td><button type="button" class="btn btn-group-sm btn-link" data-toggle="modal" data-target="#alert" ng-click="webCtrl.alert(item)">Save</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="space-60"></div>
+
+<div class="modal fade" id="alert" role="dialog">
+    <div class="modal-dialog">
+        <div class="panel">
+            <div class="panel-body">
+                <p>Are you sure, You want to save this data?</p>
+                <button><i class="btn-info btn-xs" data-dismiss="modal" ng-click="webCtrl.post(webCtrl.addItem)">YES</i></button>
+                <button><i class="btn-info btn-xs" data-dismiss="modal">NO</i></button>
+            </div>
+        </div>
+    </div>
+</div>
