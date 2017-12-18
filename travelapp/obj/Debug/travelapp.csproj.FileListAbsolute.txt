@@ -130,6 +130,7 @@ C:\repos\github\myapp\travelapp\bin\travelapp.pdb
 C:\repos\github\myapp\travelapp\bin\Antlr3.Runtime.dll
 C:\repos\github\myapp\travelapp\bin\EntityFramework.dll
 C:\repos\github\myapp\travelapp\bin\EntityFramework.SqlServer.dll
+C:\repos\github\myapp\travelapp\bin\HtmlAgilityPack.dll
 C:\repos\github\myapp\travelapp\bin\Microsoft.AI.Agent.Intercept.dll
 C:\repos\github\myapp\travelapp\bin\Microsoft.AI.DependencyCollector.dll
 C:\repos\github\myapp\travelapp\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -167,6 +168,8 @@ C:\repos\github\myapp\travelapp\bin\travelapp.services.dll
 C:\repos\github\myapp\travelapp\bin\WebGrease.dll
 C:\repos\github\myapp\travelapp\bin\travelapp.services.pdb
 C:\repos\github\myapp\travelapp\bin\travelapp.models.pdb
+C:\repos\github\myapp\travelapp\bin\HtmlAgilityPack.pdb
+C:\repos\github\myapp\travelapp\bin\HtmlAgilityPack.xml
 C:\repos\github\myapp\travelapp\bin\System.Web.Helpers.xml
 C:\repos\github\myapp\travelapp\bin\System.Web.Mvc.xml
 C:\repos\github\myapp\travelapp\bin\System.Web.Optimization.xml

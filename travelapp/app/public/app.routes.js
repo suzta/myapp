@@ -34,6 +34,13 @@
                 controller: 'peopleController as peopleCtrl'
             })
             .state({
+                name: 'webscraping',
+                url: '/webscraping',
+                templateUrl: '/app/public/web/web.html',
+                title: 'webscraping',
+                controller: 'webscrapingController as webCtrl'
+            })
+            .state({
                 name: 'register',
                 url: '/register',
                 templateUrl: '/app/public/register/register.html',
