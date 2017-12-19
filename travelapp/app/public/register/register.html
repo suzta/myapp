@@ -7,42 +7,41 @@
             </div>
         </div>
         <div class="main-login main-center">
-            <form class="form-horizontal" method="post" action="#">
+            <form class="form-horizontal" name="post" action="#">
 
                 <div class="form-group">
-                    <label for="name" class="cols-sm-2 control-label">First Name</label>
+                    <label for="name" class="cols-sm-2 control-label">UserName</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" ng-model="registerController.item.firstName" placeholder="Enter your Name" />
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="username" class="cols-sm-2 control-label">Last Name</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" ng-model="registerController.item.lastName" placeholder="Enter your Username" />
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="email" class="cols-sm-2 control-label">Your Email</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input type="email" class="form-control" ng-model="registerController.item.email" placeholder="Enter your Email" />
+                            <input type="text" class="form-control" ng-model="registerCtrl.item.userName" placeholder="Enter your Name" required/>
+                            <p class="validationText" ng-show="post.userName.$invalid && !post.userName.$pristine">UserName is required</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="form-group">
+                    <label for="email" class="cols-sm-2 control-label">Your Email</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <input type="email" class="form-control" ng-model="registerCtrl.item.email" placeholder="Enter your Email" required/>
+                            <p class="validationText" ng-show="post.email.$invalid && !post.email.$pristine">A valid email is required</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label for="password" class="cols-sm-2 control-label">Password</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input type="password" class="form-control" ng-model="registerController.item.password" placeholder="Enter your Password" />
+                            <input type="password" class="form-control" ng-model="registerCtrl.item.password" placeholder="Enter your Password" required 
+                                   ng-minlength="8" ng-maxlength="12" ng-pattern="/.*[0-9].*/"/>
+                            <p class="validationText" ng-show="post.password.$error.required && !post.password.$pristine">A valid password is required</p>
+                            <p class="validationText" ng-show="post.password.$error.minlength">Password contain min length of 8 characters.</p>
+                            <p class="validationText" ng-show="post.password.$error.maxlength">Password couldn't exceed 12 characters.</p>
+                            <p class="validationText" ng-show="post.password.$error.pattern">Password must contain atleast 1 digit.</p>
                         </div>
                     </div>
                 </div>
@@ -51,16 +50,67 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input type="password" class="form-control" ng-model="registerController.item.confirmPassword" placeholder="Confirm your Password" />
+                            <input type="password" class="form-control" ng-model="registerCtrl.confirmPassword" placeholder="Confirm your Password" required
+                                   ng-pattern="registerController.item.password" />
+                            <p class="validationText" ng-show="post.confirmPassword.$error.required && !post.confirmPassword.$pristine">Confirm your password</p>
+                            <p class="validationText" ng-show="post.confirmPassword.$error.pattern">Password didn't match.</p>
                         </div>
                     </div>
                 </div>
                 <div class="form-group ">
-                    <button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block login-button" ng-click="registerCtrl.post()">Register</button>
                 </div>
                 <div class="login-register">
-                    <a href="index.php">Login</a>
+                    <p>If you are already register</p>
+                    <a href="#">Login Here</a>
                 </div>
+            </form>
+        </div>
+        <div class="space-60"></div>
+        <div class="main-login main-center">
+            <form class="form-horizontal" method="post" action="#">
+
+                <div class="form-group">
+                    <label for="email" class="cols-sm-2 control-label">Your Email</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <input type="email" class="form-control" ng-model="registerCtrl.loginItem.email" placeholder="Enter your Email" required />
+                            <p class="validationText" ng-show="post.email.$invalid && !post.email.$pristine">A valid email is required</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="cols-sm-2 control-label">Password</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                            <input type="password" class="form-control" ng-model="registerCtrl.loginItem.password" placeholder="Enter your Password" required
+                                   ng-minlength="8" ng-maxlength="12" ng-pattern="/.*[0-9].*/" />
+                            <p class="validationText" ng-show="post.password.$error.required && !post.password.$pristine">A valid password is required</p>
+                            <p class="validationText" ng-show="post.password.$error.minlength">Password contain min length of 8 characters.</p>
+                            <p class="validationText" ng-show="post.password.$error.maxlength">Password couldn't exceed 12 characters.</p>
+                            <p class="validationText" ng-show="post.password.$error.pattern">Password must contain atleast 1 digit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                            <input type="password" class="form-control" ng-model="registerCtrl.confirmPassword" placeholder="Confirm your Password" required
+                                   ng-pattern="registerController.item.password" />
+                            <p class="validationText" ng-show="post.confirmPassword.$error.required && !post.confirmPassword.$pristine">Confirm your password</p>
+                            <p class="validationText" ng-show="post.confirmPassword.$error.pattern">Password didn't match.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <button type="button" class="btn btn-primary btn-lg btn-block login-button" ng-click="registerCtrl.login()">Login</button>
+                </div>
+                
             </form>
         </div>
     </div>
