@@ -44,7 +44,8 @@
                 name: 'register',
                 url: '/register',
                 templateUrl: '/app/public/register/register.html',
-                title: 'register'
+                title: 'register',
+                controller: 'registerController as registerCtrl'
             });
     }
     })();

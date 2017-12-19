@@ -200,6 +200,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\PeopleController.cs" />
+    <Compile Include="Controllers\Api\RegisterController.cs" />
     <Compile Include="Controllers\Api\WebScrapingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -271,6 +272,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\people.controller.js" />
     <Content Include="Scripts\people.service.js" />
+    <Content Include="Scripts\register.controller.js" />
+    <Content Include="Scripts\register.service.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\webscraping.service.js" />
