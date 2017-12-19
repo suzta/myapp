@@ -41,6 +41,13 @@
                 controller: 'webscrapingController as webCtrl'
             })
             .state({
+                name: 'upload',
+                url: '/uplaod',
+                templateUrl: '/app/public/upload/uploadpic.html',
+                title: 'upload'
+                //controller: 'uploadController as uploadCtrl'
+            })
+            .state({
                 name: 'register',
                 url: '/register',
                 templateUrl: '/app/public/register/register.html',

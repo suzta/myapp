@@ -14,10 +14,11 @@
         vm.postSuccess = _postSuccess;
         vm.postError = _postError;
 
-        //vm.showAll = _showAll;
-        //vm.showSuccess = _showSuccess;
-        //vm.showError = _showError;
-        vm.item = [];
+        vm.login = _login;
+        vm.loginSuccess = _loginSuccess;
+        vm.loginError = _loginError;
+        vm.item = {};
+        vm.loginItem = {};
 
         function _onInit() {
             console.log("onInit: WebScrapingController");
@@ -34,6 +35,20 @@
         }
 
         function _postError(err) {
+            console.log(err);
+        }
+
+        function _login() {
+            console.log("post button was clicked");
+            vm.registerService.loging(vm.loginItem.email)
+                .then(vm.loginSuccess).catch(vm.loginError);
+        }
+        function _loginSuccess(res) {
+            console.log(res);
+            vm.loginItem = {};
+        }
+
+        function _loginError(err) {
             console.log(err);
         }
     }

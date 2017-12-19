@@ -75,7 +75,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input type="email" class="form-control" ng-model="registerCtrl.item.email" placeholder="Enter your Email" required />
+                            <input type="email" class="form-control" ng-model="registerCtrl.loginItem.email" placeholder="Enter your Email" required />
                             <p class="validationText" ng-show="post.email.$invalid && !post.email.$pristine">A valid email is required</p>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input type="password" class="form-control" ng-model="registerCtrl.item.password" placeholder="Enter your Password" required
+                            <input type="password" class="form-control" ng-model="registerCtrl.loginItem.password" placeholder="Enter your Password" required
                                    ng-minlength="8" ng-maxlength="12" ng-pattern="/.*[0-9].*/" />
                             <p class="validationText" ng-show="post.password.$error.required && !post.password.$pristine">A valid password is required</p>
                             <p class="validationText" ng-show="post.password.$error.minlength">Password contain min length of 8 characters.</p>
@@ -108,7 +108,7 @@
                     </div>
                 </div>
                 <div class="form-group ">
-                    <button type="button" class="btn btn-primary btn-lg btn-block login-button">Login</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block login-button" ng-click="registerCtrl.login()">Login</button>
                 </div>
                 
             </form>

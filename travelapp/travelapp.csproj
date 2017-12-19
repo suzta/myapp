@@ -217,6 +217,7 @@
     <Content Include="app\public\about.html" />
     <Content Include="app\public\home.html" />
     <Content Include="app\public\people\people.html" />
+    <Content Include="app\public\upload\uploadpic.html" />
     <Content Include="app\public\web\web.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />

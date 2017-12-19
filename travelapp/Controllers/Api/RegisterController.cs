@@ -34,15 +34,15 @@ namespace travelapp.Controllers.Api
             }
         }
 
-        [Route("{email:string}"), HttpGet]
+        [Route("{email}"), HttpGet]
         [AllowAnonymous]
-        public HttpResponseMessage Get(string email, string password)
+        public HttpResponseMessage login(string email)
         {
             try
             {
                 RegisterUserService svc = new RegisterUserService();
                 ItemResponse<bool> resp = new ItemResponse<bool>();
-                resp.Item= svc.Login(email, password);
+                resp.Item = svc.Login(email);
                 return Request.CreateResponse(HttpStatusCode.OK, resp);
             }
             catch (Exception ex)
@@ -50,6 +50,6 @@ namespace travelapp.Controllers.Api
                 return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
-        
+
     }
 }

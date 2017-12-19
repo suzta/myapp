@@ -12,7 +12,7 @@ namespace travelapp.services
     public class RegisterUserService: BaseService
     {
         private const int HASH_ITERATION_COUNT = 1;
-        private const int RAND_LENGTH = 16;
+        private const int RAND_LENGTH = 15;
         CryptographyService svc = new CryptographyService();
 
 
@@ -82,14 +82,27 @@ namespace travelapp.services
             return model;
         }
 
-        public bool Login(string Email, string password)
+        public bool Login(string email)
         {
             bool isSuccessful = false;
-            RegisterUser model = SelectByEmail(Email);
-            string passwordHash = svc.Hash(password, model.Salt, HASH_ITERATION_COUNT);
-            if (Email == model.Email && passwordHash == model.HashPassword)
+            RegisterUser loginmodel = SelectByEmail(email);
+            if (loginmodel.Id != 0)
             {
-                isSuccessful = true;
+                string passwordHash = svc.Hash(loginmodel.Password, loginmodel.Salt, HASH_ITERATION_COUNT);
+                //this is because salt length was declared as 15 before
+                //and it's not multiple of 4
+                //if you do 15 or any multiple of 4, you don't need to do this
+                int multOf4 = loginmodel.Salt.Length % 4;
+                if (multOf4 > 0)
+                {
+                    loginmodel.Salt += new string('=', 4 - multOf4);
+                }
+
+                if (email == loginmodel.Email && passwordHash == loginmodel.HashPassword)
+                {
+                    isSuccessful = true;
+                }
+
             }
             return isSuccessful;
         }

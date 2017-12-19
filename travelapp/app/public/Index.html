@@ -52,8 +52,12 @@
                             <a ui-sref="register" href="">Register</a>
                         </li>
                         <li style="margin-top:10px">|</li>
-                        <li>
-                            <a ui-sref="webscraping" href="">Web Scraping</a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" role="button" aria-haspopup="true">Explore<i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a ui-sref="webscraping" href="">Web Scraping</a>
+                                <li><a ui-sref="upload" href="">upload Picture</a>
+                            </ul>
                         </li>
                     </ul>
                 </div>
