@@ -28,7 +28,7 @@ namespace travelapp.services
             var items = document.DocumentNode.Descendants("span")
                 .Where(node => node.GetAttributeValue("class", "")
                 .Equals("toptitle")).ToList();
-            
+
             foreach (var node in items)
             {
                 WebScraping item = new WebScraping();
@@ -37,7 +37,7 @@ namespace travelapp.services
                 item.Url = node.Descendants("a").FirstOrDefault().GetAttributeValue("href", "");
                 List.Add(item);
                 //var getUrl = document.DocumentNode.Descendants("a");
-               // item.Url = node.GetAttributeValue("href", "");
+                // item.Url = node.GetAttributeValue("href", "");
             }
             return List;
         }

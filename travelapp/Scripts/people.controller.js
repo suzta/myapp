@@ -3,8 +3,8 @@
     angular.module("Myapp")
         .controller("peopleController", PeopleController);
 
-    PeopleController.$inject = ["$scope", "peopleService", "$location"];
-    function PeopleController($scope, PeopleService, $location) {
+    PeopleController.$inject = ["$scope", "peopleService"];
+    function PeopleController($scope, PeopleService) {
         var vm = this;
         vm.$scope = $scope;
         vm.$onInit = _onInit;
@@ -13,7 +13,6 @@
         vm.postPerson = _postPerson;
         vm.postSuccess = _postSuccess;
         vm.postError = _postError;
-        vm.$location = $location;
         vm.item = {};
         vm.allItems = {};
         vm.itemCopy = {};

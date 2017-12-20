@@ -2,7 +2,7 @@
     <header>
         <p>Uploading Picture...... :)</p>
     </header>
-        <div id="wrapper">  
+        <!--<div id="wrapper">  
             <div id="page-wrapper">
                 <div class="row">
                     <div class="container">
@@ -32,11 +32,12 @@
                                             <div class="form-group">
                                                 <div class="row" style="margin-bottom: 20px;">
                                                     <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-md-offset-3 col-sm-offset-3 col-xs-offset-2">
-                                                        <input type="file" id="exampleInputFile" img-cropper-fileread image="uploadCtrl.cropper.sourceImage">
+                                                        <input type="file" name="file" id="exampleInputFile" img-cropper-fileread image="uploadCtrl.cropper.sourceImage">
                                                     </div>
                                                 </div>
                                                 <div class="row text-center" style="padding-left: 20px;padding-right: 20px;">
-                                                    <button type="submit" class="btn btn-lg btn-block btn-success" style="border-radius: 50px;background-color:hover:#35832f;">Submit</button>
+                                                    <button type="submit" class="btn btn-lg btn-block btn-success" ng-click="uploadCtrl.post()" 
+                                                            style="border-radius: 50px;background-color:hover:#35832f;">Submit</button>
                                                 </div>
 
                                             </div>
@@ -47,9 +48,31 @@
                         </div>
                     </div>
                 </div>
-                <div class="row text-center">
-                    <img src="uploadCtrl.cropper.sourceImage" width="484px" height="434px" />
+                <div class="row text-center" ng-show="uploadCtrl.cropper.croppedImage">
+                    <img src="{{uploadCtrl.cropper.sourceImage}}" width="484px" height="434px" />
                 </div>
         </div>
+    </div>-->
+</div>
+
+
+<div>
+    <div>
+        <input type="file" name="file" id="fileUploadInput" img-cropper-fileread image="uploadCtrl.cropper.sourceImage" />
+        <div ng-show="uploadCtrl.cropper.sourceImage">
+            <canvas width="300" height="150" id="canvas"
+                    image-cropper
+                    image="uploadCtrl.cropper.sourceImage"
+                    cropped-image="uploadCtrl.cropper.croppedImage"
+                    crop-width="200"
+                    crop-height="100"
+                    keep-aspect="true"
+                    touch-radius="30"
+                    crop-area-bounds="uploadCtrl.bounds"></canvas>
+        </div>
+        <div ng-show="uploadCtrl.cropper.croppedImage"><img ng-src="{{uploadCtrl.cropper.croppedImage}}" /></div>
+    </div>
+    <div>
+        <button ng-click="uploadCtrl.post()">Upload</button>
     </div>
 </div>

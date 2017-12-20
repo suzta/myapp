@@ -7,14 +7,16 @@
             </div>
         </div>
         <div class="main-login main-center">
-            <form ng-hide="registerCtrl.loginshow" class="form-horizontal" name="post" action="#">
+            <form ng-hide="registerCtrl.loginshow" class="form-horizontal" name="people" action="#">
                 <div class="form-group">
                     <label for="name" class="cols-sm-2 control-label">UserName</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" ng-model="registerCtrl.item.userName" placeholder="Enter your Name" required/>
-                            <p class="validationText" ng-show="post.userName.$invalid && !post.userName.$pristine">UserName is required</p>
+                            <input type="text" class="form-control" name="userName" ng-model="registerCtrl.item.userName" placeholder="Enter your Name" required/><br />
+                            <div ng-show="people.userName.$invalid && !people.userName.$pristine">
+                                <p ng-show="people.userName.$error.required">UserName is required</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -24,8 +26,10 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input type="email" class="form-control" ng-model="registerCtrl.item.email" placeholder="Enter your Email" required/>
-                            <p class="validationText" ng-show="post.email.$invalid && !post.email.$pristine">A valid email is required</p>
+                            <input type="email" class="form-control"name="email"  ng-model="registerCtrl.item.email" placeholder="Enter your Email" required/><br />
+                            <div ng-show="people.email.$invalid && !people.email.$pristine">
+                                <p ng-show="people.email.$error.required">A valid email is required</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -35,12 +39,14 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input type="password" class="form-control" ng-model="registerCtrl.item.password" placeholder="Enter your Password" required 
-                                   ng-minlength="8" ng-maxlength="12" ng-pattern="/.*[0-9].*/"/>
-                            <p class="validationText" ng-show="post.password.$error.required && !post.password.$pristine">A valid password is required</p>
-                            <p class="validationText" ng-show="post.password.$error.minlength">Password contain min length of 8 characters.</p>
-                            <p class="validationText" ng-show="post.password.$error.maxlength">Password couldn't exceed 12 characters.</p>
-                            <p class="validationText" ng-show="post.password.$error.pattern">Password must contain atleast 1 digit.</p>
+                            <input type="password" class="form-control" name="password" ng-model="registerCtrl.item.password" placeholder="Enter your Password" required 
+                                   ng-minlength="8" ng-maxlength="12" ng-pattern="/.*[0-9].*/"/><br />
+                            <div ng-show="people.password.$invalid && !people.password.$pristine">
+                                <p ng-show="people.password.$error.required && !people.password.$pristine">A valid password is required</p>
+                                <p ng-show="people.password.$error.minlength">Password contain min length of 8 characters.</p>
+                                <p ng-show="people.password.$error.maxlength">Password couldn't exceed 12 characters.</p>
+                                <p ng-show="people.password.$error.pattern">Password must contain at least 1 digit.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -49,10 +55,12 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input type="password" class="form-control" ng-model="registerCtrl.confirmPassword" placeholder="Confirm your Password" required
-                                   ng-pattern="registerController.item.password" />
-                            <p class="validationText" ng-show="post.confirmPassword.$error.required && !post.confirmPassword.$pristine">Confirm your password</p>
-                            <p class="validationText" ng-show="post.confirmPassword.$error.pattern">Password didn't match.</p>
+                            <input type="password" class="form-control" name="confirmPassword" ng-model="registerCtrl.pass.confirmPassword" placeholder="Confirm your Password" required
+                                   ng-pattern="registerController.item.password" /><br />
+                            <div ng-show="people.confirmPassword.$invalid && !people.confirmPassword.$pristine">
+                                <p ng-show="people.confirmPassword.$error.required">This field is required.</p>
+                                <p ng-show="people.confirmPassword.$error.pattern">Password didn't match.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -73,15 +81,15 @@
             </div>
         </div>
         <div ng-show="registerCtrl.loginshow" class="main-login main-center">
-            <form class="form-horizontal" method="post" action="#">
+            <form class="form-horizontal" method="post" name="edit">
 
                 <div class="form-group">
                     <label for="email" class="cols-sm-2 control-label">Your Email</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input type="email" class="form-control" ng-model="registerCtrl.loginItem.email" placeholder="Enter your Email" required />
-                            <p class="validationText" ng-show="post.email.$invalid && !post.email.$pristine">A valid email is required</p>
+                            <input type="email" class="form-control" name="email" ng-model="registerCtrl.loginItem.email" placeholder="Enter your Email" required /><br />
+                            <p class="validationText" ng-show="edit.email.$invalid && !edit.email.$pristine">A valid email is required</p>
                         </div>
                     </div>
                 </div>
@@ -91,12 +99,12 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input type="password" class="form-control" ng-model="registerCtrl.loginItem.password" placeholder="Enter your Password" required
-                                   ng-minlength="8" ng-maxlength="12" ng-pattern="/.*[0-9].*/" />
-                            <p class="validationText" ng-show="post.password.$error.required && !post.password.$pristine">A valid password is required</p>
-                            <p class="validationText" ng-show="post.password.$error.minlength">Password contain min length of 8 characters.</p>
-                            <p class="validationText" ng-show="post.password.$error.maxlength">Password couldn't exceed 12 characters.</p>
-                            <p class="validationText" ng-show="post.password.$error.pattern">Password must contain atleast 1 digit.</p>
+                            <input type="password" class="form-control" name="password" ng-model="registerCtrl.loginItem.password" placeholder="Enter your Password" required
+                                   ng-minlength="8" ng-maxlength="12" ng-pattern="/.*[0-9].*/" /><br />
+                            <p ng-show="edit.password.$error.required && !edit.password.$pristine">A valid password is required</p>
+                            <p ng-show="edit.password.$error.minlength">Password contain min length of 8 characters.</p>
+                            <p ng-show="edit.password.$error.maxlength">Password couldn't exceed 12 characters.</p>
+                            <p ng-show="edit.password.$error.pattern">Password must contain atleast 1 digit.</p>
                         </div>
                     </div>
                 </div>
@@ -105,10 +113,10 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input type="password" class="form-control" ng-model="registerCtrl.confirmPassword" placeholder="Confirm your Password" required
-                                   ng-pattern="registerController.item.password" />
-                            <p class="validationText" ng-show="post.confirmPassword.$error.required && !post.confirmPassword.$pristine">Confirm your password</p>
-                            <p class="validationText" ng-show="post.confirmPassword.$error.pattern">Password didn't match.</p>
+                            <input type="password" class="form-control" name="confirmPassword" ng-model="registerCtrl.passconfirmPassword" placeholder="Confirm your Password" required
+                                   ng-pattern="registerController.loginItem.password" /><br />
+                            <p ng-show="edit.confirmPassword.$error.required && !edit.confirmPassword.$pristine">Confirm your password</p>
+                            <p ng-show="edit.confirmPassword.$error.pattern">Password didn't match.</p>
                         </div>
                     </div>
                 </div>

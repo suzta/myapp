@@ -11,15 +11,15 @@
         </div>
         <div class="space-30"></div>
         <div class="main-login main-center">
-            <form class="form-horizontal" name="people" method="post" action="#">
+            <form class="form-horizontal" name="people">
                 <div class="form-group">
                     <label class="col-sm-4 control-label">First Name</label>
                     <div class="col-sm-8">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="firstName" ng-model="peopleCtrl.item.firstName" placeholder="Enter your frist Name" required />
+                            <input type="text" class="form-control" name="firstName" ng-model="peopleCtrl.item.firstName" placeholder="Enter your frist Name" required /><br/>
                             <div ng-show="people.firstName.$invalid && !people.firstName.$pristine">
-                                <span ng-messages="required" class="text-danger">First Name is required</span>
+                                <span ng-messages="people.firstName.$error.required" class="text-danger">First Name is required</span>
                             </div>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                     <div class="col-sm-8">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="middleInitial" ng-model="peopleCtrl.item.middleInitial" placeholder="Enter your middle initial" />
+                            <input type="text" class="form-control" name="middleInitial" ng-model="peopleCtrl.item.middleInitial" placeholder="Enter your middle initial" /><br />
                         </div>
                     </div>
                 </div>
@@ -38,9 +38,9 @@
                     <div class="col-sm-8">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="lastName" ng-model="peopleCtrl.item.lastName" placeholder="Enter your last name" required />
+                            <input type="text" class="form-control" name="lastName" ng-model="peopleCtrl.item.lastName" placeholder="Enter your last name" required /><br />
                             <div ng-show="people.lastName.$invalid && !people.lastName.$pristine">
-                                <span ng-messages="required" class="text-danger">Last Name is required.</span>
+                                <span ng-messages="people.lastName.$error.required" class="text-danger">Last Name is required.</span>
                             </div>
                         </div>
                     </div>
@@ -50,9 +50,9 @@
                     <div class="col-sm-8">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input type="date" class="form-control" name="dateOfBirth" ng-model="peopleCtrl.item.dateOfBirth" placeholder="Enter your dateOfBirth" required />
+                            <input type="date" class="form-control" name="dateOfBirth" ng-model="peopleCtrl.item.dateOfBirth" placeholder="Enter your dateOfBirth" required /><br />
                             <div ng-show="people.dateOfBirth.$invalid && !people.dateOfBirth.$pristine">
-                                <span ng-messages="required" class="text-danger">Birth Date is required.</span>
+                                <span ng-messages="people.dateOfBirth.$error.required" class="text-danger">Birth Date is required.</span>
                             </div>
                         </div>
                     </div>
