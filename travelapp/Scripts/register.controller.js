@@ -3,12 +3,13 @@
     angular.module("Myapp")
         .controller("registerController", RegisterController);
 
-    RegisterController.$inject = ["$scope", "registerService"];
-    function RegisterController($scope, RegisterService) {
+    RegisterController.$inject = ["$scope", "registerService", "$location"];
+    function RegisterController($scope, RegisterService, $location) {
         var vm = this;
         vm.$scope = $scope;
         vm.$onInit = _onInit;
         vm.registerService = RegisterService;
+        vm.$location = $location;
 
         vm.post = _post;
         vm.postSuccess = _postSuccess;
@@ -46,12 +47,13 @@
 
         function _login() {
             console.log("post button was clicked");
-            vm.registerService.loging(vm.loginItem.email)
+            vm.registerService.loging(vm.loginItem.email, vm.loginItem.password)
                 .then(vm.loginSuccess).catch(vm.loginError);
         }
         function _loginSuccess(res) {
             console.log(res);
             vm.loginItem = {};
+            vm.$location.path("/home");
         }
 
         function _loginError(err) {

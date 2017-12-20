@@ -13,7 +13,8 @@
         vm.post = _post;
         vm.postSuccess = _postSuccess;
         vm.postError = _postError;
-
+        vm.cropper.sourceImage = null;
+        vm.cropper.croppedImage = null;
         vm.item = {};
 
         function _onInit() {

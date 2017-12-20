@@ -48,22 +48,8 @@
                     </div>
                 </div>
                 <div class="row text-center">
-                    <img src="http://via.placeholder.com/484x434" width="484px" height="434px" />
+                    <img src="uploadCtrl.cropper.sourceImage" width="484px" height="434px" />
                 </div>
         </div>
     </div>
-</div>
-
-<div class="col-sm-4">
-    New Gallery Submission Form <br />
-    Image Title: <br />
-    <input type="text" style="background-color:black" ng-model="uploadCtrl.imageItem.imageTitle" /><br />
-    Image Description:<br />
-    <textarea rows="4" cols="40" style="background-color: black" ng-model="uploadCtrl.imageItem.description"></textarea><br />
-    <div><button data-toggle="modal" data-target="#adminProfileImgUploadModal">Upload Image</button></div>
-    <textarea cols="40" placeholder="{{uploadCtrl.$scope.currentCroppedImg}}"></textarea>
-
-    <button class="btn btn-circle btn-b" type="button" ng-click="uploadCtrl.upload()">Submit New Image</button>
-    <button class="btn btn-circle btn-b" type="button" ng-click="uploadCtrl.edit()">Save Changes</button>
-
 </div>

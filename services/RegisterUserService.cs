@@ -82,7 +82,7 @@ namespace travelapp.services
             return model;
         }
 
-        public bool Login(string email)
+        public bool Login(string email, string password)
         {
             bool isSuccessful = false;
             RegisterUser loginmodel = SelectByEmail(email);
@@ -97,7 +97,7 @@ namespace travelapp.services
                     loginmodel.Salt += new string('=', 4 - multOf4);
                 }
 
-                string passwordHash = svc.Hash(loginmodel.Password, loginmodel.Salt, HASH_ITERATION_COUNT);
+                string passwordHash = svc.Hash(password, loginmodel.Salt, HASH_ITERATION_COUNT);
 
                 if (email == loginmodel.Email && passwordHash == loginmodel.HashPassword)
                 {

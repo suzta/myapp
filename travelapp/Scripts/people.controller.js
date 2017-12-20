@@ -3,8 +3,8 @@
     angular.module("Myapp")
         .controller("peopleController", PeopleController);
 
-    PeopleController.$inject = ["$scope", "peopleService"];
-    function PeopleController($scope, PeopleService) {
+    PeopleController.$inject = ["$scope", "peopleService", "$location"];
+    function PeopleController($scope, PeopleService, $location) {
         var vm = this;
         vm.$scope = $scope;
         vm.$onInit = _onInit;
@@ -13,7 +13,7 @@
         vm.postPerson = _postPerson;
         vm.postSuccess = _postSuccess;
         vm.postError = _postError;
-
+        vm.$location = $location;
         vm.item = {};
         vm.allItems = {};
         vm.itemCopy = {};
@@ -45,7 +45,8 @@
             console.log(res);
             _showAll();
             $scope.people.$setPristine();
-            $scope.newAddress.$setUntouched();
+            $scope.people.$setUntouched();
+            //vm.$location.path("/listpeople");
         }
 
         function _postError(err) {

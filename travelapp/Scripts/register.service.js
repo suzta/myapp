@@ -15,8 +15,8 @@
                 .then(Success).catch(Error);
         }
 
-        function _loging(email) {
-            return $http.get("http://localhost:50709/api/register/login/"+ email)
+        function _loging(email, password) {
+            return $http.get("http://localhost:50709/api/register/"+ email+ "/" + password +"/")
                 .then(Success).catch(Error);
         }
 
