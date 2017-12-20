@@ -33,6 +33,13 @@
                 title: 'people',
                 controller: 'peopleController as peopleCtrl'
             })
+            //.state({
+            //    name: 'listpeople',
+            //    url: '/listpeople',
+            //    templateUrl: '/app/public/people/listOfPeople.html',
+            //    title: 'listpeople',
+            //    controller: 'peopleController as peopleCtrl'
+            //})
             .state({
                 name: 'webscraping',
                 url: '/webscraping',
@@ -44,8 +51,8 @@
                 name: 'upload',
                 url: '/uplaod',
                 templateUrl: '/app/public/upload/uploadpic.html',
-                title: 'upload'
-                //controller: 'uploadController as uploadCtrl'
+                title: 'upload',
+                controller: 'imageUploadController as uploadCtrl'
             })
             .state({
                 name: 'register',
