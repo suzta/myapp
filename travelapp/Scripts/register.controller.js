@@ -20,6 +20,7 @@
         vm.loginError = _loginError;
         vm.item = {};
         vm.loginItem = {};
+        vm.pass = [];
         vm.showForm = _showForm;
         vm.loginshow = false;
 
@@ -35,6 +36,8 @@
         function _postSuccess(res) {
             console.log(res);
             vm.item = [];
+            vm.pass = [];
+            _showForm();
         }
 
         function _postError(err) {
@@ -53,6 +56,7 @@
         function _loginSuccess(res) {
             console.log(res);
             vm.loginItem = {};
+            vm.pass = [];
             vm.$location.path("/home");
         }
 
