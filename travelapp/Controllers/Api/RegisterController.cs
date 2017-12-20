@@ -34,7 +34,7 @@ namespace travelapp.Controllers.Api
             }
         }
 
-        [Route("{email}"), HttpGet]
+        [Route("{email}/"), HttpGet]
         [AllowAnonymous]
         public HttpResponseMessage login(string email)
         {

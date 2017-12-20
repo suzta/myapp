@@ -45,12 +45,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseResponse.cs" />
+    <Compile Include="EncodedImage.cs" />
+    <Compile Include="Image.cs" />
     <Compile Include="ItemResponse.cs" />
     <Compile Include="ItemsResponse.cs" />
     <Compile Include="People.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterUser.cs" />
     <Compile Include="SuccessResponse.cs" />
+    <Compile Include="UserFile.cs" />
     <Compile Include="WebScraping.cs" />
   </ItemGroup>
   <ItemGroup>

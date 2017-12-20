@@ -1,14 +1,13 @@
 ﻿<div class="container">
     <div class="row main">
         <div class="panel-heading">
-            <div class="panel-title text-center">
+            <div class="panel-title text-center" ng-hide="registerCtrl.loginshow">
                 <h1 class="title">REGISTER</h1>
                 <hr />
             </div>
         </div>
         <div class="main-login main-center">
-            <form class="form-horizontal" name="post" action="#">
-
+            <form ng-hide="registerCtrl.loginshow" class="form-horizontal" name="post" action="#">
                 <div class="form-group">
                     <label for="name" class="cols-sm-2 control-label">UserName</label>
                     <div class="cols-sm-10">
@@ -62,12 +61,18 @@
                 </div>
                 <div class="login-register">
                     <p>If you are already register</p>
-                    <a href="#">Login Here</a>
+                    <a href="#" ng-click="registerCtrl.showForm()">Login Here</a>
                 </div>
             </form>
         </div>
         <div class="space-60"></div>
-        <div class="main-login main-center">
+        <div class="panel-heading">
+            <div class="panel-title text-center" ng-show="registerCtrl.loginshow">
+                <h1 class="title">Login</h1>
+                <hr />
+            </div>
+        </div>
+        <div ng-show="registerCtrl.loginshow" class="main-login main-center">
             <form class="form-horizontal" method="post" action="#">
 
                 <div class="form-group">

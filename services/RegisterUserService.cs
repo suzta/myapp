@@ -88,7 +88,6 @@ namespace travelapp.services
             RegisterUser loginmodel = SelectByEmail(email);
             if (loginmodel.Id != 0)
             {
-                string passwordHash = svc.Hash(loginmodel.Password, loginmodel.Salt, HASH_ITERATION_COUNT);
                 //this is because salt length was declared as 15 before
                 //and it's not multiple of 4
                 //if you do 15 or any multiple of 4, you don't need to do this
@@ -97,6 +96,8 @@ namespace travelapp.services
                 {
                     loginmodel.Salt += new string('=', 4 - multOf4);
                 }
+
+                string passwordHash = svc.Hash(loginmodel.Password, loginmodel.Salt, HASH_ITERATION_COUNT);
 
                 if (email == loginmodel.Email && passwordHash == loginmodel.HashPassword)
                 {

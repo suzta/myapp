@@ -19,6 +19,8 @@
         vm.loginError = _loginError;
         vm.item = {};
         vm.loginItem = {};
+        vm.showForm = _showForm;
+        vm.loginshow = false;
 
         function _onInit() {
             console.log("onInit: WebScrapingController");
@@ -36,6 +38,10 @@
 
         function _postError(err) {
             console.log(err);
+        }
+
+        function _showForm() {
+            vm.loginshow = true;
         }
 
         function _login() {

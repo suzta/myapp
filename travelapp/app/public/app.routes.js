@@ -44,8 +44,8 @@
                 name: 'upload',
                 url: '/uplaod',
                 templateUrl: '/app/public/upload/uploadpic.html',
-                title: 'upload'
-                //controller: 'uploadController as uploadCtrl'
+                title: 'upload',
+                controller: 'imageUploadController as uploadCtrl'
             })
             .state({
                 name: 'register',
